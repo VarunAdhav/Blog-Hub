@@ -1,0 +1,53 @@
+* {
+    /* display: grid;
+    justify-content: center; */
+    color: #7289da;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: #282B30;
+}
+
+.date {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    padding: 15%;
+    padding-top: 10%;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.date h4 {
+    font-weight: 200;
+    padding-left: 10%;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #7289da;
+}
+
+.header {
+    background-color: #282B30;
+}
+
+/* CSS for writers page */
+
+.publisher {
+    padding-top: 200px;
+}
+
+.publisher textarea {
+    margin-left: 25%;
+    /* margin-bottom: 20px; */
+}
+
+.publisher button {
+    margin-top: 20px;
+    margin-left: 37.5%;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.publisher h2 {
+    margin-top: 20px;
+    margin-left: 25%;
+    padding-bottom: 20px;
+}

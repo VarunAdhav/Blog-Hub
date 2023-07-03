@@ -1,0 +1,24 @@
+{
+  "name": "blog-site",
+  "version": "1.0.0",
+  "description": "\"A challenge I take to complete a Blog Site using EJS , Express JS etc.\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VarunAdhav/myBlogSite.git"
+  },
+  "author": "Varun Adhavan T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VarunAdhav/myBlogSite/issues"
+  },
+  "homepage": "https://github.com/VarunAdhav/myBlogSite#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
