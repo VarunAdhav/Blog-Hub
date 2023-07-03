@@ -9,7 +9,8 @@ app.use(express.static("public"));
 
 let today = new Date();
 
-let blogs = {};
+let blogs = ["My First Blog" , "My First Blog"];
+let timeStamps = ["00:00" , "01:20"];
 
 let option = {
     weekday : "long",
@@ -22,7 +23,9 @@ let date = today.toLocaleDateString("en-IN" , option);
 
 app.post("/write" , (req , res)=>{
     let newBlog = req.body.blog;
-    console.log(newBlog);
+    blogs.push(newBlog);
+    timeStamps.push(today.toTimeString().slice(0,5));
+    console.log();
     res.redirect("/");
 });
 
@@ -32,7 +35,7 @@ app.get("/write" , (req , res)=>{
 });
 
 app.get("/" , (req , res)=>{
-    res.render("home" , {title:"Blogszz",date:date});
+    res.render("home" , {title:"Blogszz",date:date , blogs:blogs , timeStamps:timeStamps});
 });
 
 app.listen(3000 , ()=>{

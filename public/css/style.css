@@ -8,20 +8,27 @@
 }
 
 .date {
-    display: flex;
-    height: fit-content;
-    width: fit-content;
+    display: grid;
+        height: auto;
+        width: auto;
     padding: 15%;
     padding-top: 10%;
     padding-bottom: 10px;
     text-align: left;
 }
 
-.date h4 {
-    font-weight: 200;
+.date p {
+    font-weight: 100;
+    font-size: small;
     padding-left: 10%;
     padding-bottom: 20px;
     border-bottom: solid 1px #7289da;
+}
+.date h4 {
+    font-weight: 200;
+    padding-left: 10%;
+    padding-bottom: 10px;
+    
 }
 
 .header {
