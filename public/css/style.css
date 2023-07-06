@@ -58,3 +58,31 @@
     margin-left: 25%;
     padding-bottom: 20px;
 }
+.header h2 {
+    display: grid;
+    margin: 0%;
+    padding-top: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.header li {
+    font-size: x-large;
+    color: #7289da;
+}
+
+.header li a {
+    font-size: x-large;
+    color: #7289da;
+}
+
+/* About CSS */
+.about p {
+    text-align: center;
+}
+
+.about h4 {
+    text-align: center;
+    padding-top: 7.5%;
+    padding-bottom: 20px;
+}

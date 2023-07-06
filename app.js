@@ -19,13 +19,19 @@ let option = {
     day : "numeric"
 }
 
-let date = today.toLocaleDateString("en-IN" , option);
+let opt = {
+    hour : "numeric",
+    minute : "numeric"
+}
+
+let date = today.toLocaleDateString("en-IN" , opt);
 
 app.post("/write" , (req , res)=>{
     let newBlog = req.body.blog;
     blogs.push(newBlog);
     timeStamps.push(today.toTimeString().slice(0,5));
-    console.log();
+    console.log("Time:",date);
+    console.log("\nSuccesfully added the: ",newBlog);
     res.redirect("/");
 });
 
@@ -36,6 +42,10 @@ app.get("/write" , (req , res)=>{
 
 app.get("/" , (req , res)=>{
     res.render("home" , {title:"Blogszz",date:date , blogs:blogs , timeStamps:timeStamps});
+});
+
+app.get("/about" , (req , res)=>{
+    res.render("about" , {title: "About"});
 });
 
 app.listen(3000 , ()=>{
