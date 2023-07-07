@@ -8,40 +8,50 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 let today = new Date();
+let data = [
+    {"Title":"First Blog" , 
+      "Blog":"Hello this is my first blog.."  }
+];
+// let blogs = ["My First Blog" , "My First Blog"];
+// let timeStamps = ["00:00" , "01:20"];
 
-let blogs = ["My First Blog" , "My First Blog"];
-let timeStamps = ["00:00" , "01:20"];
 
-let option = {
-    weekday : "long",
-    year : "numeric",
-    month : "long",
-    day : "numeric"
-}
+// let option = {
+//     weekday : "long",
+//     year : "numeric",
+//     month : "long",
+//     day : "numeric"
+// }
 
-let opt = {
-    hour : "numeric",
-    minute : "numeric"
-}
+// let opt = {
+//     hour : "numeric",
+//     minute : "numeric"
+// }
 
-let date = today.toLocaleDateString("en-IN" , opt);
+// let date = today.toLocaleDateString("en-IN" , opt);
 
 app.post("/write" , (req , res)=>{
     let newBlog = req.body.blog;
-    blogs.push(newBlog);
-    timeStamps.push(today.toTimeString().slice(0,5));
-    console.log("Time:",date);
-    console.log("\nSuccesfully added the: ",newBlog);
+    let newTitle = req.body.title;
+    let json = {
+        "Title": newTitle,
+        "Blog":  newBlog
+    }
+    data.push(json);
+    // timeStamps.push(today.toTimeString().slice(0,5));
+    // console.log("Time:",date);
+
+    console.log("\nSuccesfully added the: ",json);
     res.redirect("/");
 });
 
 app.get("/write" , (req , res)=>{
     console.log("into /write");
-    res.render("write", {title:"Today's Blogszz" , date:date});
+    res.render("write", {title:"Today's Blogszz"});
 });
 
 app.get("/" , (req , res)=>{
-    res.render("home" , {title:"Blogszz",date:date , blogs:blogs , timeStamps:timeStamps});
+    res.render("home" , {title:"Blogszz", data:data});
 });
 
 app.get("/about" , (req , res)=>{

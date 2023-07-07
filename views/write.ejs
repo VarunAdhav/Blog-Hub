@@ -4,10 +4,9 @@
 
     <body>
         <div class="publisher">
-            <h2 name="date">
-                <%= date %> :
-            </h2>
+            
             <form action="/write" method="post">
+                <input type="text" name="title" class="form-control w-50" placeholder="Enter Title">
                 <textarea class="form-control w-50" name="blog" rows="10" placeholder="Write blogszz.."
                     autofocus></textarea>
                 <button type="submit" class="btn btn-dark rounded-3 bg-primary w-25">PUBLISH</button>
