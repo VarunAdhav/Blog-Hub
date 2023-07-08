@@ -5,9 +5,9 @@ const app = express();
 
 app.set("view engine" , "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static("public"));
+app.use(express.static(__dirname+"/public"));
 
-let today = new Date();
+// let today = new Date();
 let data = [
     {"Title":"First Blog" , 
       "Blog":"Hello this is my first blog.."  }
@@ -24,7 +24,7 @@ let data = [
 // }
 
 // let opt = {
-//     hour : "numeric",
+//     hour : "numeric", 
 //     minute : "numeric"
 // }
 
@@ -42,7 +42,7 @@ app.post("/write" , (req , res)=>{
     // console.log("Time:",date);
 
     console.log("\nSuccesfully added the: ",json);
-    res.redirect("/");
+    res.redirect("/home");
 });
 
 app.get("/write" , (req , res)=>{
@@ -50,13 +50,26 @@ app.get("/write" , (req , res)=>{
     res.render("write", {title:"Today's Blogszz"});
 });
 
-app.get("/" , (req , res)=>{
+app.get("/home" , (req , res)=>{
     res.render("home" , {title:"Blogszz", data:data});
+});
+
+app.get("/blogs/:Title/:blogNo" , (req , res)=>{
+    let i =req.params.blogNo;
+    let Blog = data[i].Blog;
+    let title = req.params.Title;
+    console.log(req.params);
+    res.render("blogs" , {i:i , title: title, Blog:Blog});
+});
+
+app.get("/" , (req , res)=>{
+    res.redirect("/home");
 });
 
 app.get("/about" , (req , res)=>{
     res.render("about" , {title: "About"});
 });
+
 
 app.listen(3000 , ()=>{
     console.log("Listening @ port 3000...");

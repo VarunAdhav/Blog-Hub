@@ -11,9 +11,9 @@
     display: grid;
         height: auto;
         width: auto;
-    padding: 15%;
-    padding-top: 10%;
-    padding-bottom: 10px;
+    padding: 5%;
+        /* padding-top: 10%; */
+        /* padding-bottom: 10px; */
     text-align: left;
 }
 
@@ -90,4 +90,30 @@
     text-align: center;
     padding-top: 7.5%;
     padding-bottom: 20px;
+}
+/* Blog Page */
+.blog {
+    display: grid;
+    height: auto;
+    width: auto;
+    font-weight: bold;
+    padding: 5%;
+    padding-top: 2%;
+    text-align: left;
+}
+
+.blog p {
+    font-weight: 500;
+    font-size: x-large;
+    align-items: center;
+    text-align: justify;
+}
+
+.blog h4 {
+    font-weight: bold;
+    /* padding-left: 10%; */
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 25px;
+
 }

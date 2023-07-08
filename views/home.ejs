@@ -1,14 +1,9 @@
 <%- include("header") %>
-
-
-
     <body>
-
-
         <div class="date">
             <% for(var i=0;i<data.length;i++){%>
             <h2>
-                Blog <%= i+1 %>
+                <a class="nav-link" href="/blogs/<%= data[i].Title %>/<%= i %>" >Blog <%= i+1 %></a>
             </h2>
             <h4>
                 <%= data[i].Title %>
