@@ -3,12 +3,15 @@
         <div class="date">
             <% for(var i=0;i<data.length;i++){%>
             <h2>
-                <a class="nav-link" href="/blogs/<%= data[i].Title %>/<%= i %>" >Blog <%= i+1 %></a>
+                <a class="nav-link" href="/home/<%= data[i].Title %>">Blog <%= i+1 %></a>
             </h2>
             <h4>
                 <%= data[i].Title %>
             </h4>
-            <p> <%= data[i].Blog %> </p>
+            <p>
+                <%= data[i].Blog.substring(0 , 100) %> <a style="text-decoration: none;" href="/home/<%= data[i].Title %>">..Read
+                        more</a>
+            </p>
             <% } %>
         </div>
     </body>

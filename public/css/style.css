@@ -19,10 +19,14 @@
 
 .date p {
     font-weight: 100;
-    font-size: small;
+    font-size: medium;
     padding-left: 10%;
     padding-bottom: 20px;
     border-bottom: solid 1px #7289da;
+    /* text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden; */
+        /* CSS way to wrap a long paragraphs to a single line and it works*/
 }
 .date h4 {
     font-weight: 200;
