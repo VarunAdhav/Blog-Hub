@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname+"/public"));
 
 mongoose.connect("mongodb+srv://varunDev:Zgw79eOBFOMCzjjj@cluster0.ef3jysx.mongodb.net/Blogs").then(()=>{
-        console.log("Connected to MongoDB");
+        console.log("Connected to MongoDB Atlas");
 })
 
 const blogSchema = new mongoose.Schema({

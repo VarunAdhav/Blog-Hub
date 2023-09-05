@@ -42,7 +42,7 @@
 /* CSS for writers page */
 
 .publisher {
-    padding-top: 200px;
+    padding-top: 20px;
 }
 
 .publisher textarea {
@@ -73,6 +73,7 @@
     padding-top: 20px;
     text-align: center;
     padding-bottom: 20px;
+    
 }
 
 .header li {
@@ -120,4 +121,60 @@
     text-align: center;
     padding-bottom: 25px;
 
+}
+.paragraph {
+    white-space: pre-wrap;
+}
+
+.phoneScreens {
+    display: none;
+}
+
+@media only screen and (max-width: 400px) {
+    .phoneScreens {
+        display: flex;
+        margin: 2%;
+    }
+
+    .menu-icon {
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .menu-icon div {
+        width: 30px;
+        height: 3px;
+        margin: 3px 0;
+        background-color: #7289da;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #7289da;
+        position: absolute;
+        top: 60px;
+        /* right: 0;
+        z-index: 1; */
+    }
+
+    .nav-menu.active {
+        display: flex;
+        position: relative;
+        justify-content: left;
+    }
+
+    .nav-item {
+        padding: 15px;
+        /* color: #fff; */
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+        font-size: large;
+        color: #7289da;
+    }
+
+    ul,
+    li {
+        display: none;
+    }
 }
